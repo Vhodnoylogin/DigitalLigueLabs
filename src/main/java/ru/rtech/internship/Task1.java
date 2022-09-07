@@ -11,4 +11,19 @@ public class Task1 {
     public String capitalize(String str) {
         throw new UnsupportedOperationException("Удалите эту строку и напишите реализацию");
     }
+
+    public static class Nword {
+        protected String headWord = "";
+        protected String tailWord = "";
+
+        public Nword(String word) {
+            if (word == null || word.isEmpty()) return;
+            this.headWord = word.substring(0, 1);
+            this.tailWord = word.substring(1);
+        }
+
+        public String getCapitalizedWord() {
+            return this.headWord.toUpperCase() + this.tailWord.toLowerCase();
+        }
+    }
 }
