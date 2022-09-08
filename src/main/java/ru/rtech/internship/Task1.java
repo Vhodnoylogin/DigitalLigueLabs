@@ -1,8 +1,9 @@
 package ru.rtech.internship;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class Task1 {
-
-
     public static String capitalizedWord(String word) {
         if (word == null || word.isEmpty()) return word;
         return word.substring(0, 1).toUpperCase()
@@ -16,6 +17,9 @@ public class Task1 {
      */
     public String capitalize(String str) {
 //        throw new UnsupportedOperationException("Удалите эту строку и напишите реализацию");
-        return str;
+        String DELIM = " ";
+        return Arrays.stream(str.split(DELIM))
+                .map(Task1::capitalizedWord)
+                .collect(Collectors.joining(DELIM));
     }
 }
